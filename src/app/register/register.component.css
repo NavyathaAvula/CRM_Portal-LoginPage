@@ -1,0 +1,120 @@
+.login-title {
+    font-family: 'Nunito';
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65px;
+    letter-spacing: 0em;
+}
+.form-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #ff395a !important;
+
+}
+td{
+    padding-left: 20px;
+}
+table{
+align-items: center;
+display: fulx;
+margin: auto;
+}
+.submit-button {
+    padding: 20px;
+    background-color: #ff395a !important;
+    color: white !important;
+    align-items: center;
+    display: fulx;
+    margin: auto;
+    margin-left: 560px;
+    
+}
+mat-card-actions{
+    margin: auto;
+    align-items:center;
+    display:flex;
+    margin-left: 520px;
+}
+
+
+/* 
+  @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Nunito:wght@200;400&family=Raleway+Dots&display=swap');
+
+  .login {
+    width: 35vw;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    border-radius: 15px;
+    flex-wrap: wrap;
+  }
+
+  h2 {
+    text-align: center;
+    color: #FF395A;
+    font-family: 'Nunito', sans-serif;
+    font-size: 48px;
+    flex-wrap: wrap;
+  }
+
+  label {
+    color: #FF395A;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    flex-wrap: wrap;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="email"]{
+    width: 15vw;
+    height: 2.5vw;
+    border: 1px solid;
+    padding-left: 8px;
+    flex-wrap: wrap;
+  }
+
+  button[type="submit"] {
+    height: 2.5vw;
+    width: 15vw;
+    background-color: #FF395A;
+    border: none;
+    border-radius: 2px;
+    padding-left: 7px;
+    color: white;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    flex-wrap: wrap;
+  }
+
+  button[type="submit"]:hover {
+    background-color: white;
+    border: 1px solid #FF395A;
+    color: black;
+  }
+
+  .mat-card-actions a {
+    text-decoration: none;
+    color: #FF395A;
+    margin-left: -1vw;
+    font-family: 'Nunito', sans-serif;
+    flex-wrap: wrap;
+  }
+
+  .mat-card-actions a:hover {
+    text-decoration: underline;
+  }
+  #reg {
+    text-decoration: none;
+    color: #FF395A;
+    margin-left: -1vw;
+    font-family: 'Nunito', sans-serif;
+    flex-wrap: wrap;
+  } */

@@ -1,0 +1,48 @@
+<body>
+  <div>
+  <img src="../assets/image/logo.png" width="150px" height="80px" style="margin-left: -0.5vw; margin-top: -0.5vw">
+</div>
+<br><br><br>
+<div class="login-page page-hero">
+  <div class="login-form form-hero">
+    <div class="form-head">
+      <h1 class="login-title">LOGIN</h1>
+    </div>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <mat-label class="form-title">Login ID</mat-label>
+  <mat-form-field appearance="outline" style="width: 100%;margin-top: 6px;">
+    <mat-label>name@gmail.com</mat-label>
+    <input matInput formControlName="userName" />
+    <mat-error *ngIf="loginForm.controls['userName']?.['touched']">
+      <span *ngIf="loginForm.controls['userName']?.['errors']?.['required']">
+        Please Enter Email Id
+      </span>
+      <span *ngIf="loginForm.controls['userName']?.['errors']?.['email']">
+        Please Enter Valid Email Id
+      </span>
+    </mat-error>
+  </mat-form-field>
+<br>
+  <mat-label class="form-title">Password</mat-label>
+  <mat-form-field appearance="outline" style="width: 100%;margin-top: 6px;">
+    <mat-label>Ex@123</mat-label>
+    <input matInput formControlName="password" type="password" />
+    <mat-error *ngIf="loginForm.controls['password']?.['touched']">
+      <span *ngIf="loginForm.controls['password']?.['errors']?.['required']">
+        -Please Enter Your Password
+      </span>
+    </mat-error>
+  </mat-form-field>
+    <mat-card-actions>
+      <a routerLink="/reset-password" class="reset-link">Forgot your password?</a>
+    </mat-card-actions>
+ <br><br>
+  <button mat-raised-button type="submit" class="submit-button" [disabled]="!loginForm.valid" >Submit</button>
+ <br><br>
+    <mat-card-actions>
+   <a routerLink="register" id="reg"> Did'nt have an account? <u> register</u></a>
+   </mat-card-actions>
+</form>
+</div>
+</div>
+</body>

@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "CRM_Portal-LoginPage",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

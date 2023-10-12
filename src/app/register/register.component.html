@@ -1,0 +1,240 @@
+<img src="../assets/image/logo.png" width="150px" height="80px" style="margin-left: -0.5vw; margin-top: -0.5vw">
+<div class="form-head">
+<h1 class="login-title">REGISTER</h1>
+</div>
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <table>
+ <tr>
+<td> <mat-label class="form-title">FIRST NAME</mat-label>
+  <mat-form-field appearance="outline" style="width: 100%;margin-top: 6px;">
+    <mat-label>Please enter First Name</mat-label>
+    <input matInput formControlName="firstName" />
+    <mat-error *ngIf="registerForm.controls['firstName']?.['touched']">
+      <span *ngIf="registerForm.controls['firstName']?.['errors']?.['required']">
+        Please Enter Your first Name
+      </span>
+      <span *ngIf="registerForm.controls['firstName']?.['errors']?.['alpha']">
+        Please Enter Alphabets only.
+      </span>
+       <span *ngIf="registerForm.controls['firstName']?.['errors']?.['maxlength']">
+        Please Enter less then 14 Alphabets
+    </span>
+    </mat-error>
+  </mat-form-field></td>
+  <td> <mat-label class="form-title">LAST NAME</mat-label>
+    <mat-form-field appearance="outline" style="width: 100%;margin-top: 6px;">
+      <mat-label>Please enter Last Name</mat-label>
+      <input matInput formControlName="lastName" />
+      <mat-error *ngIf="registerForm.controls['lastName']?.['touched']">
+        <span *ngIf="registerForm.controls['firstName']?.['errors']?.['required']">
+          Please Enter Your last Name
+        </span>
+        <span *ngIf="registerForm.controls['lastName']?.['errors']?.['alpha']">
+          Please Enter Alphabets only.
+        </span>
+        <span *ngIf="registerForm.controls['lastName']?.['errors']?.['maxlength']">
+          -Please Enter less then 14 Alphabets
+        </span>
+      </mat-error>
+    </mat-form-field></td>
+</tr>
+<tr>
+  <td>
+    <mat-label class="form-title">EMAIL ID</mat-label>
+    <mat-form-field appearance="outline" style="width: 100%;margin-top: 6px;">
+      <mat-label>Please enter Email Id</mat-label>
+      <input matInput formControlName="email" />
+      <mat-error *ngIf="registerForm.controls['email']?.['touched']">
+        <span *ngIf="registerForm.controls['firstName']?.['errors']?.['required']">
+          Please Enter Your Email Id
+        </span>
+        <span *ngIf="registerForm.controls['email']?.['errors']?.['email']">
+          Please Enter Your Valid Email id
+        </span>
+      </mat-error>
+    </mat-form-field>
+  </td>
+  <td>
+    <mat-label class="form-title">PHONE NUMBER</mat-label>
+    <mat-form-field appearance="outline" style="width: 100%;margin-top: 6px;">
+      <mat-label>Please enter Phone Number</mat-label>
+      <input matInput formControlName="phoneNumber" />
+      <mat-error *ngIf="registerForm.controls['phoneNumber']?.['touched']">
+        <span *ngIf="registerForm.controls['phoneNumber']?.['errors']?.['num']">
+          Please Enter Your Phone Number[Numeric characters only].
+        </span>
+      <span *ngIf="registerForm.controls['phoneNumber']?.['errors']?.['maxlength'] ||registerForm.controls['phoneNumber']?.['errors']?.['minlength'] ">
+        Phone Number Should contain 10 Digits.
+      </span>
+      </mat-error>
+      <!-- <mat-error>  
+        <span *ngIf="registerForm.controls['phoneNumber']?.['errors']?.['minlength']">
+         Phone Number Should contain more then 9 digits 10 Digits.
+        </span>
+      </mat-error> -->
+    </mat-form-field>
+  </td>
+</tr>
+<tr>
+  <td>
+    <mat-label class="form-title">PASSWORD</mat-label>
+    <mat-form-field appearance="outline" style="width: 100%;margin-top: 6px;">
+      <mat-label>Please enter Password</mat-label>
+      <input matInput formControlName="password" type="password" />
+      <mat-error *ngIf="registerForm.controls['password']?.['touched']">
+        <span *ngIf="registerForm.controls['password']?.['errors']?.['required']">
+          Please Enter your Password.
+        </span>
+      <span *ngIf="registerForm.controls['password']?.['errors']?.['upper']">
+       at least one upper case letter.
+      </span>
+      <span *ngIf="registerForm.controls['password']?.['errors']?.['lower']">
+       at least one lower case letter.
+      </span>
+      <span *ngIf="registerForm.controls['password']?.['errors']?.['num']">
+      at least one digit.
+      </span>
+      <span *ngIf="registerForm.controls['password']?.['errors']?.['specialChar']">
+      at least one special character which includes !@#$%&*()-+=^
+      </span>
+      <span *ngIf="registerForm.controls['password']?.['errors']?.['minlength']">
+       password contains at least 8 characters and at most 20 characters.
+      </span>
+      <span *ngIf="registerForm.controls['password']?.['errors']?.['maxlength']">
+        - password contains less then or equal to 20 characters.
+      </span>
+      </mat-error>
+    </mat-form-field>
+  </td>
+  <td>
+    <mat-label class="form-title">CONFIRM PASSWORD</mat-label>
+    <mat-form-field appearance="outline" style="width: 100%;margin-top: 6px;">
+      <mat-label>Please Re-enter Password</mat-label>
+      <input matInput formControlName="confirmPassword" type="password"/>
+      <mat-error *ngIf="registerForm.controls['confirmPassword']?.['touched']">
+        <span *ngIf="registerForm.controls['confirmPassword']?.['errors']?.['required']">
+          Please Re-enter Password.
+        </span>
+      <span *ngIf="registerForm.controls['confirmPassword']?.['errors']?.['upper']">
+         at least one upper case letter.
+      </span>
+      <span *ngIf="registerForm.controls['confirmPassword']?.['errors']?.['lower']">
+      at least one lower case letter.
+      </span>
+      <span *ngIf="registerForm.controls['confirmPassword']?.['errors']?.['num']">
+     at least one digit.
+      </span>
+      <span *ngIf="registerForm.controls['confirmPassword']?.['errors']?.['specialChar']">
+        at least one special character which includes !@#$%&*()-+=^
+      </span>
+      <span *ngIf="registerForm.controls['confirmPassword']?.['errors']?.['minlength']">
+       password contains at least 8 characters and at most 20 characters.
+      </span>
+      <span *ngIf="registerForm.controls['confirmPassword']?.['errors']?.['maxlength']">
+        password contains less then or equal to 20 characters.
+      </span>
+      </mat-error>
+    </mat-form-field>
+  </td>
+</tr>
+</table>
+<div>
+<button mat-raised-button color="primary" type="submit" class="submit-button" [disabled]="!registerForm.valid">Register</button>
+</div>
+<br>
+<mat-card-actions>
+  <a href="/" id="reg">already have account? <span class="text-danger">Login</span></a>
+</mat-card-actions>
+
+</form>
+
+
+<!-- <div class="login-container">
+  <mat-card class="login-card">
+    <div class="login">
+
+      <h2>Register</h2>
+
+      <form [formGroup]="registerForm">
+        <label>First Name*</label> <br>
+        <input matInput  type="text" placeholder="Please enter fullName" formControlName="firstName" required>
+        <br><br>
+        <div *ngIf="registerForm.controls['firstName']?.['touched']">
+          <div *ngIf="registerForm.controls['firstName']?.['errors']?.['required']">
+            - -Please Enter Your first Name
+          </div>
+           <div *ngIf="registerForm.controls['firstName']?.['errors']?.['maxlength']">
+            -Please Enter less then 14 Alphabets
+        </div>
+        </div>
+        <label>Last Name*</label> <br>
+        <input matInput  type="text" placeholder="Please enter fullName" formControlName="lastName" required>
+        <br><br>
+        <div *ngIf="registerForm.controls['lastName']?.['touched'] " >
+          -Please Enter Your Last Name
+        </div>
+        <div *ngIf="registerForm.controls['lastName']?.['errors']?.['maxlength']">
+            -Please Enter less then 14 Alphabets
+        </div>
+
+        <label>Email id*</label> <br>
+        <input matInput type="email" placeholder="Please enter Email" formControlName="email" required>
+        <br><br>
+        <div *ngIf="registerForm.controls['email']?.['touched']">
+          <div *ngIf="registerForm.controls['email']?.['errors']?.['email']">
+            -Please Enter Your Correct Email id
+          </div>
+        </div>
+        
+      
+        <label>Phone Number*</label> <br>
+        <input matInput type="tel" placeholder="Please enter phoneNumber" formControlName="phoneNumber" required>
+        <br><br>
+        <div *ngIf="registerForm.controls['phoneNumber']?.['touched']" style="color:red">
+          <div *ngIf="registerForm.controls['phoneNumber']?.['errors']?.['minlength']">
+            - Phone Number Should contain more then 9 digits 10 Digits.
+          </div>
+          <div *ngIf="registerForm.controls['phoneNumber']?.['errors']?.['num']">
+            - Please Enter Numeric characters only.
+          </div>
+        </div>
+        <div *ngIf="registerForm.controls['phoneNumber']?.['errors']?.['maxlength']">
+          - Phone Number Should contain 10 Digits.
+        </div>
+
+        <label>Password*</label> <br>
+        <input matInput type="password" placeholder="Please enter password" formControlName="password" required>
+        <br><br>
+        <div *ngIf="registerForm.controls['password']?.['touched']">
+          <div *ngIf="registerForm.controls['password']?.['errors']?.['required']">
+          </div>
+        <div *ngIf="registerForm.controls['password']?.['errors']?.['upper']">
+          - password contains at least one upper case alphabet.
+        </div>
+        <div *ngIf="registerForm.controls['password']?.['errors']?.['lower']">
+         - password contains at least one lower case alphabet.
+        </div>
+        <div *ngIf="registerForm.controls['password']?.['errors']?.['num']">
+          - password contains at least one digit.
+        </div>
+        <div *ngIf="registerForm.controls['password']?.['errors']?.['specialChar']">
+         -  password contains at least one special character which includes !@#$%&*()-+=^
+        </div>
+        <div *ngIf="registerForm.controls['password']?.['errors']?.['minlength']">
+          - password contains at least 8 characters and at most 20 characters.
+        </div>
+      </div>
+
+      <br>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid" (click)="register()" class="login-button mat-button-lg">Register</button> <br>
+         <button mat-raised-button type="button" color="warn" (click)="registerForm.reset()" class="login-button mat-button-lg">Reset</button> -->
+        <!-- <mat-card-actions>
+          <a href="/" id="reg">already have account? <span class="text-danger">Login</span></a>
+      </mat-card-actions>
+      </form>
+    </div>
+
+</mat-card>
+
+
+</div> --> 

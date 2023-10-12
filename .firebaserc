@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angularcrm-test": {
+      "hosting": {
+        "CRM_Portal-LoginPage": [
+          "angularcrm-test"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angularcrm-test"
+  }
+}

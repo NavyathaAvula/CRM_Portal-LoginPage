@@ -1,0 +1,139 @@
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" class="contact-body">
+  <div class="body-content" style="clear: both">
+    <form [formGroup]="contactForm" (ngSubmit)="writeIntoDataBase()">
+      <div class="container">
+        <div class="row input-container">
+          <div class="communicationdiv">
+            <h3>CONTACT US</h3>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="styled-input">
+              <input type="text" id="fullname" required="" formControlName="name"
+                [ngClass]="{ 'invalid-input': contactForm.get('name').invalid && contactForm.get('name').touched }" />
+              <label>Full Name*</label>
+              <div *ngIf="contactForm.controls['name']?.['touched']" style="color: red;size: 10px;">
+                <div *ngIf="contactForm.controls['name']?.['errors']?.['required']"  >
+                  Please Enter your FullName
+                </div>
+                <div *ngIf="contactForm.controls['name']?.['errors']?.['maxlength']" >
+                  please enter at most 14 charcters
+                </div>
+                <div *ngIf="contactForm.controls['name']?.['errors']?.['minlength']" >
+                  please enter minimum 3 charcters
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="styled-input" style="float: right">
+              <input type="text" id="email"  required="" formControlName="email"
+                [ngClass]="{ 'invalid-input': contactForm.get('email').invalid &&  contactForm.get('email').touched }" />
+              <label>Email*</label>
+              <div *ngIf="contactForm.controls['email']?.['touched']" style="color: red;size: 10px;">
+                <div *ngIf="contactForm.controls['email']?.['errors']?.['required']">
+                  Please Enter your Email Id
+                </div>
+                <div *ngIf="contactForm.controls['email']?.['errors']?.['email']">
+                  Please Enter Valid Email Id
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="styled-input">
+              <input type="text"id="organisation"  required=""  formControlName="or"
+                [ngClass]="{ 'invalid-input': contactForm.get('or').invalid &&  contactForm.get('or').touched}" />
+              <label>Organization*</label>
+              <div *ngIf="contactForm.controls['or']?.['touched']" style="color: red;size: 10px;">
+                <div *ngIf="contactForm.controls['or']?.['errors']?.['required']" >
+                  Please Enter your Organization Name
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="styled-input" style="float: right">
+              <input
+                type="text"
+                id="phonenumber"
+                required=""
+                formControlName="phoneNo"
+                [ngClass]="{
+                  'invalid-input':
+                    contactForm.get('phoneNo').invalid &&
+                    contactForm.get('phoneNo').touched
+                }"
+              />
+              <label>Phone Number*</label>
+              <div *ngIf="contactForm.controls['phoneNo']?.['touched']" style="color: red;size: 10px;">
+                <div
+                  *ngIf="contactForm.controls['phoneNo']?.['errors']?.['required']">
+                  Please Enter your PhoneNumber
+                </div>
+                <div *ngIf="contactForm.controls['phoneNo']?.['errors']?.['minlength']">
+                  Please Enter 10 Digit Phone Number
+                  <div *ngIf="contactForm.controls['phoneNo']?.['errors']?.['num']">
+                    Please Enter Numberic Characters
+                  </div>
+                </div>
+                <div
+                  *ngIf="contactForm.controls['phoneNo']?.['errors']?.['maxlength']"
+                >
+                  Please Enter 10 Digit Phone Number
+                </div>               
+              </div>
+            </div>
+          </div>
+          <div class="cols-xs-12">
+            <div style="display: flex" id="rbtn-container">
+              <input
+                type="radio"
+                class="rbtn"
+                name="role"
+                value="parent"
+                formControlName="role"
+              /><span class="rbtn-label">Parent</span>
+              <input
+                type="radio"
+                class="rbtn"
+                name="role"
+                value="teacher"
+                formControlName="role"
+              /><span class="rbtn-label">Teacher</span>
+              <input
+                type="radio"
+                class="rbtn"
+                name="role"
+                value="driver"
+                formControlName="role"
+              />
+              <span class="rbtn-label">Driver</span>
+              <input
+                type="radio"
+                class="rbtn"
+                name="role"
+                value="admin"
+                formControlName="role"
+              /><span class="rbtn-label">Admin</span> <br />
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <textarea formControlName="textarea" required="" id="message"
+                [ngClass]="{ 'invalid-input': contactForm.get('textarea').invalid && contactForm.get('textarea').touched}">
+              </textarea>
+              <label>Message*</label>
+              <div *ngIf="contactForm.controls['textarea']?.['touched']" style="color: red;size: 10px;">
+                <div *ngIf="contactForm.controls['textarea']?.['errors']?.['required']">
+                  Please Enter your Message
+                </div>
+              </div>
+            </div>
+            <mat-spinner [diameter]="40" *ngIf="spinner" color="warn" style="margin: auto;"></mat-spinner><br>
+          </div>
+          <button id="sendbtn" type="submit" [disabled]="!contactForm.valid" class="btn-lrg submit-btn" style="width:150px; margin:auto"> Send </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
